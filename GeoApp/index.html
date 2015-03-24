@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GeoApp</title>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="viewport" content="user-scalable=no, width=device-width"/>
+    <link rel="stylesheet" href="css/clear.css" type="text/css"/>
+    <link rel="stylesheet" href="css/index.css" type="text/css"/>
+    <link href="Tab4Liu/index.css" rel="stylesheet" type="text/css">
+
+    <script type="text/javascript" language="javascript" src="jquery2.03.js"></script>
+
+    <script type="text/javascript" language="javascript" src="canvas.js"></script>
+    <script type="text/javascript" language="javascript" src="draw.js"></script>
+    <script type="text/javascript" language="javascript" src="math.js"></script>
+    <script type="text/javascript" language="javascript" src="utilities.js"></script>
+    <script type="text/javascript" language="javascript" src="polynomial.js"></script>
+
+    <script type="text/javascript" language="javascript" src="modernizr.custom.34982.js"></script>
+    <script src="hammer/dist/hammer.min.js"></script>
+    <script src="hammer/dist/jquery.hammer.min.js"></script>
+    <script src="hammer/plugins//hammer.fakemultitouch.js"></script>
+    <script src="hammer/plugins/hammer.showtouches.js"></script>
+    <script src="hammer/plugins/jquery.hammer.js"></script>
+
+
+
+
+    <script>
+        function BlockMove(event) {
+            //Tell Safari not to move the window.
+            event.preventDefault();
+        }
+    </script>
+</head>
+<body ontouchmove="BlockMove(event);">
+<div class="appWrap">
+    <!--<div class="tutorial">-->
+    <!--</div>-->
+    <div class="utilities">
+        <div class="help"></div>
+        <div class="playback"></div>
+    </div>
+    <div id='canvasDiv'>
+    </div>
+    <div class="functionBtn"></div>
+    <div class="functionDiv">
+        <div class="functionWarp">
+        </div>
+    </div>
+
+    <div class="tableBtn"></div>
+    <div class="tableDiv">
+    </div>
+    <div class="messagebox">Welcome</div>
+    <div class="toolbar">
+        <div class="btnWarp">
+            <div class="leftGroup">
+                <div class="drawing_radiobutton drawingTool"></div>
+                <div class="line_radiobutton drawingTool"></div>
+                <div class="conic_radiobutton drawingTool"></div>
+                <div class="sine_radiobutton drawingTool"></div>
+                <div class="input_radiobutton drawingTool"></div>
+                <div class="text_radiobutton drawingTool"></div>
+
+                <!--<div class="spacer"></div>-->
+
+                <div class="snaptokeypoint_checkbox"></div>
+                <div class="showCoord"></div>
+                <div class="snaptogrid_checkbox"></div>
+                <div class="snaptoobject_checkbox"></div>
+                <div class="snaptotangent_checkbox"></div>
+
+                <div class="spacer"></div>
+
+                <div class="handtool_radiobutton"></div>
+                <div class="move_radiobutton editingTool"></div>
+                <div class="resize_radiobutton editingTool"></div>
+                <div class="delete_radiobutton editingTool"></div>
+
+                <div class="spacer"></div>
+
+                <div class="nightvision"></div>
+            </div>
+        </div>
+    </div>
+    <div class="inputPop" align="center">
+        <div align="center">
+            <div class="plot_line"></div>
+            <div class="plot_circle"></div>
+            <div class="plot_ellipse"></div>
+            <div class="plot_text"></div>
+        </div>
+    </div>
+    <div class="conicPop" style="bottom: -100px;">
+        <div class="circle_radiobutton"></div>
+        <div class="ellipse_radiobutton"></div>
+    </div>
+    <div class="linePop" style="bottom: -100px;">
+        <div class="lineseg_radiobutton"></div>
+        <div class="ray_radiobutton"></div>
+    </div>
+</div>
+<script type="text/javascript" language="javascript" src="baseline.js"></script>
+<script type="text/javascript" language="javascript" src="index.js"></script>
+<script type="text/javascript" language="javascript" src="tableplot.js"></script>
+
+
+<script>
+    $(".appWrap").on('touchend click', ".tutorial", function(){
+        $(this).fadeOut(1000);
+        $(".utilities").fadeIn(1000);
+    });
+    $(".appWrap").on('touchend click', ".help", function(){
+        $(".utilities").fadeOut(1000);
+        $(".tutorial").fadeIn(1000);
+    });
+    $(".appWrap").on('blur', ".textnote", function(){
+        var finalCanvas = document.getElementById("finalCanvas");
+        var context = finalCanvas.getContext("2d");
+        var pointScreen = {x:$(".textnote").position().left,y:$(".textnote").position().top};
+        var html = $(".textnote").val();
+        if (html!="SomeText"&&html!=""){
+            context.beginPath();
+//            context.arc(pointScreen.x, pointScreen.y, 2, 0, 2 * Math.PI, true);
+//            context.strokeStyle = Colors.obj;
+//            context.stroke();
+            context.fillStyle = Colors.obj;
+            context.font = 'italic 12px sans-serif';
+            context.textAlign = 'left';
+            context.textBaseline = 'top';
+            context.fillText(html, pointScreen.x, pointScreen.y);
+            var text = {
+                type: "text",
+                position: S2W(pointScreen),
+                content: html
+            }
+            addObject(text);
+        }
+        $(".textnote").remove();
+    });
+    $(".appWrap").on('touchend click', ".playback", function(){
+        if (isRecording=="recording"){
+            isRecording = "ready";
+            $(this).css({content:'url("img/playback.png")'});
+        }
+        else if (isRecording=="idle"){
+            isRecording = "recording";
+            $(this).css({content:'url("img/stop.png")'});
+        }
+        else if (isRecording=="ready"){
+            isRecording = "idle";
+            $(this).css({content:'url("img/recording.png")'});
+            playback();
+        }
+    });
+</script>
+
+
+</body>
+
+</html>

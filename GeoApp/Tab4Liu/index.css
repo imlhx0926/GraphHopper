@@ -1,0 +1,154 @@
+#tabContainer {
+    width:100%;
+    height:100%;
+    padding:1px;
+    /*background-color: grey;*/
+    /*-moz-border-radius: 4px;*/
+    /*border-radius: 4px;*/
+}
+
+.tabs{
+    height:25px;
+}
+
+.tabs > ul > li{
+    margin:1px 3px 0 0;
+    padding:3px 10px;
+    display:block;
+    float:left;
+    color:#000;
+
+    -moz-border-radius-topleft: 4px;
+    -moz-border-radius-topright: 4px;
+    -moz-border-radius-bottomright: 0px;
+    -moz-border-radius-bottomleft: 0px;
+
+    border-top-left-radius:4px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+
+    background: #555555; /* old browsers */
+
+}
+
+.tabs > ul > li:hover{
+    background: indianred; /* old browsers */
+    background: -moz-linear-gradient(top, #FFFFFF 0%, #F3F3F3 10%, #F3F3F3 50%, #FFFFFF 100%); /* firefox */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#indianred), color-stop(10%,#F3F3F3), color-stop(50%,#F3F3F3), color-stop(100%,#FFFFFF)); /* webkit */
+    cursor:pointer;
+    color: #333;
+}
+
+.tabs > ul > li.tabActiveHeader{
+    background: #FFFFFF; /* old browsers */
+    background: -moz-linear-gradient(top, #FFFFFF 0%, #F3F3F3 10%, #F3F3F3 50%, #FFFFFF 100%); /* firefox */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#FFFFFF), color-stop(10%,#F3F3F3), color-stop(50%,#F3F3F3), color-stop(100%,#FFFFFF)); /* webkit */
+    cursor:pointer;
+    color: #333;
+}
+
+.tabscontent {
+    /*position: relative;*/
+    top: 25px;
+    /*width: 80%;*/
+    /*height: 60%;*/
+    /*margin:0 10% 0 10%;*/
+    /*background: #FFFFFF;*/
+    /*background: -moz-linear-gradient(top, #FFFFFF 0%, #FFFFFF 90%, #e4e9ed 100%);*/
+    /*background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#FFFFFF), color-stop(90%,#FFFFFF), color-stop(100%,#e4e9ed));*/
+}
+
+.tablePlot {
+     margin:0px;padding:0px;
+     width:395px;
+     /*box-shadow: 10px 10px 5px #888888;*/
+     border:1px solid #000000;
+
+     -moz-border-radius-bottomleft:5px;
+     -webkit-border-bottom-left-radius:5px;
+     border-bottom-left-radius:5px;
+
+     -moz-border-radius-bottomright:5px;
+     -webkit-border-bottom-right-radius:5px;
+     border-bottom-right-radius:5px;
+
+     -moz-border-radius-topright:5px;
+     -webkit-border-top-right-radius:5px;
+     border-top-right-radius:5px;
+
+     -moz-border-radius-topleft:5px;
+     -webkit-border-top-left-radius:5px;
+     border-top-left-radius:5px;
+ }.tablePlot table{
+      width:100%;
+      height:100%;
+      margin:0px;padding:0px;
+  }.tablePlot tr:last-child td:last-child {
+       -moz-border-radius-bottomright:5px;
+       -webkit-border-bottom-right-radius:5px;
+       border-bottom-right-radius:5px;
+   }
+.tablePlot table tr:first-child td:first-child {
+    -moz-border-radius-topleft:5px;
+    -webkit-border-top-left-radius:5px;
+    border-top-left-radius:5px;
+}
+.tablePlot table tr:first-child td:last-child {
+    -moz-border-radius-topright:5px;
+    -webkit-border-top-right-radius:5px;
+    border-top-right-radius:5px;
+}.tablePlot tr:last-child td:first-child{
+     -moz-border-radius-bottomleft:5px;
+     -webkit-border-bottom-left-radius:5px;
+     border-bottom-left-radius:5px;
+ }.tablePlot tr:hover td{
+
+  }
+.tablePlot tr:nth-child(odd){ background-color:#e5e5e5; }
+.tablePlot tr:nth-child(even)    { background-color:#ffffff; }.tablePlot td{
+                                                                  vertical-align:middle;
+
+
+                                                                  border:1px solid #000000;
+                                                                  border-width:0px 1px 1px 0px;
+                                                                  text-align:center;
+                                                                  padding:5px;
+                                                                  font-size:15px;
+                                                                  font-family:Arial;
+                                                                  font-weight:normal;
+                                                                  color:#000000;
+                                                              }.tablePlot tr:last-child td{
+                                                                   border-width:0px 1px 0px 0px;
+                                                               }.tablePlot tr td:last-child{
+                                                                    border-width:0px 0px 1px 0px;
+                                                                }.tablePlot tr:last-child td:last-child{
+                                                                     border-width:0px 0px 0px 0px;
+                                                                 }
+.tablePlot tr:first-child td{
+    background:-o-linear-gradient(bottom, #cccccc 5%, #b2b2b2 100%);	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #cccccc), color-stop(1, #b2b2b2) );
+    background:-moz-linear-gradient( center top, #cccccc 5%, #b2b2b2 100% );
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#cccccc", endColorstr="#b2b2b2");	background: -o-linear-gradient(top,#cccccc,b2b2b2);
+
+    background-color:#cccccc;
+    border:0px solid #000000;
+    text-align:center;
+    border-width:0px 0px 1px 1px;
+    font-size:20px;
+    font-family:Arial;
+    font-weight:bold;
+    color:#000000;
+}
+.tablePlot tr:first-child:hover td{
+    background:-o-linear-gradient(bottom, #cccccc 5%, #b2b2b2 100%);	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #cccccc), color-stop(1, #b2b2b2) );
+    background:-moz-linear-gradient( center top, #cccccc 5%, #b2b2b2 100% );
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#cccccc", endColorstr="#b2b2b2");	background: -o-linear-gradient(top,#cccccc,b2b2b2);
+
+    background-color:#cccccc;
+}
+.tablePlot tr:first-child td:first-child{
+    border-width:0px 0px 1px 0px;
+}
+.tablePlot tr:first-child td:last-child{
+    border-width:0px 0px 1px 1px;
+}

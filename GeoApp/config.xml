@@ -1,0 +1,15 @@
+<config>
+    <scale>
+        <max>150</max>
+        <min>0.5</min>
+    </scale>
+    <origin>
+        <x></x>
+        <y></y>
+    </origin>
+    <panning>
+        <max></max>
+        <min></min>
+    </panning>
+    <background>../img/icons/circle.png</background>
+</config>

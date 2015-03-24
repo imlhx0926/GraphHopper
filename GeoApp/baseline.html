@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html manifest="" lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>BaseLine</title>
+    <link href="css/canvas.css" rel="stylesheet" type="text/css" />
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="baseline.js"> </script>
+	
+    <script src="hammer/dist/hammer.min.js"></script>
+    <script src="hammer/dist/jquery.hammer.min.js"></script>
+    <script src="hammer/plugins//hammer.fakemultitouch.js"></script>
+    <script src="hammer/plugins/hammer.showtouches.js"></script>
+    <script src="hammer/plugins/jquery.hammer.js"></script>
+</head>
+<body>
+<div id="canvasDiv" class="canvasDiv">
+	<!-- <canvas id="canvas" class="canvasC" width="2000" height="700"></canvas> -->
+</div>	
+
+<script>
+    $('#canvasDiv').html('<div id="canvasDiv"><canvas id="canvas" class="canvasC" width='+ ($("#canvasDiv").width()) + ' height=' + ($("#canvasDiv").height()) + '></canvas></div>');
+	// $('#canvas').width($("#canvasDiv").width());
+	// $('#canvas').height($("#canvasDiv").height());
+	onCanvasInit();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" href="css/index.css" type="text/css"/>
+    <script src="lib/hand-1.1.1.js"></script>
+    <script src="js/graphHopper.js"></script>
+</head>
+<body>
+<div id='canvasDiv' >
+</div>
+<div class='toolbar'>
+    <div class='selectBtn' onclick='game.baseline.currentAction="select"'></div>
+    <div class='lineBtn' onclick='game.baseline.currentAction="line"'></div>
+    <div class='circleBtn' onclick='game.baseline.currentAction="circle"'></div>
+</div>
+<script type="text/javascript">
+    var game;
+    Gh.ready(function () {
+        Gh.require(
+                [
+                    "Gh.shape.shape",
+                    "Gh.shape.point",
+                    "Gh.shape.line",
+                    "Gh.shape.circle",
+                    "Gh.shape.triangle",
+                    "Gh.geo.config",
+                    "Gh.geo.baseline",
+                    "Gh.geo.utility",
+                    "Gh.geo.draw",
+                    "Gh.geo.game",
+                    "Gh.geo.shapeFactory",
+                    "Gh.core.binding"
+                ],
+                function () {
+                    var gameModel = Gh.use("Geo.Game");
+                    game = new gameModel();
+                    game.init();
+                });
+    }, 1);
+</script>
+</body>
+</html>
